@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 ">
+      <form [formGroup] = "loginForm" (ngSubmit)="onLogin()" >
+        <div class="form-group col-md-10">
+          <input type="email" class="form-control"
+          formControlName = "email" placeholder="Email" id="email" name="email" >
+        </div>
+        <div class="form-group col-md-10">
+            <input type="password" class="form-control"
+            formControlName = "password" placeholder="password" id="password" name="password" >
+        </div>
+        
+        <div class="form-group col-md-3">
+            <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid" >Login</button>
+        </div>
+        
+        <div class="from-group col-md-10">
+        <h4>Dont have an Account.Click here to <i class="fa fa-hand-o-right" aria-hidden="true"></i> <a routerLink="/signup">Create an account</a></h4>                
+        <h4 class="err-message" >{{statusMsg}}</h4>
+       
+      </div>
+      </form>
+  </div>
+</div>

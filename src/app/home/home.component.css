@@ -1,0 +1,9 @@
+.dashboard {
+    background-color: gray;
+}
+
+.mesg { 
+    display: block;
+    margin-top: 550px;
+    margin-left: 800px;
+}

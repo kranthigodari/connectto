@@ -1,0 +1,23 @@
+.navbar {
+    background-color: aliceblue;
+}
+.liclss {
+    margin-left: 20px;
+}
+.search {
+    height: 35px;
+    margin-top: 7px;
+    font-family: 'FontAwesome';
+    margin-right: 300px;
+}
+
+.btn-search {
+    background-color:#779E9E;
+    margin-left: 5px;
+    height: 35px;
+    margin-top: 7px;
+    font-family: 'FontAwesome'; 
+}
+.home {
+    margin-right: 300px;
+}
