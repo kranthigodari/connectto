@@ -9,6 +9,12 @@
         <li> <button class="btn btn-search"><i class="fa fa-search"></i></button></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown"appDropdown>
+            <a style="cursor: pointer;" class="dropdown-toggle" role="button">Find Friends</a>
+            <ul class="dropdown-menu">
+              <li><a style="cursor: pointer;" *ngFor="let friends of friend;">{{friend.cnt_u_id}}</a></li>
+            </ul> 
+        </li>
        <li><a routerLink="/" href=""> Home</a></li>
        <li><a routerLink="/requests"> <i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
        <li class="dropdown"appDropdown>
@@ -22,7 +28,7 @@
        <li class="dropdown home" appDropdown>
           <a style="cursor: pointer;" class="dropdown-toggle" role="button"><span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a style="cursor: pointer;" >Setting </a></li>
+            <li><a style="cursor: pointer;" (click)="settingsPage()" >Setting </a></li>
             <li><a style="cursor: pointer;" (click)="onLogout()" >Logout</a></li>
           </ul>
         </li>

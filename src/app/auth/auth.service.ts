@@ -9,6 +9,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthService {
+    signUPStatus:string;
     token: string;
     constructor(private http: Http, private route: ActivatedRoute, private router: Router) {}
 
@@ -42,7 +43,7 @@ export class AuthService {
         return this.http.post('http://localhost:3000/user/signup', user)
         .map(
             res => {
-                console.log(res);
+                this.signUPStatus = "Succefully Registered";
             })
             .catch(this.handleError);
     }

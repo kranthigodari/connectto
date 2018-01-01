@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import { Input } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Md5 } from 'ts-md5/dist/md5';
 
 @Component({
   selector: 'app-login',
@@ -35,7 +36,12 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    this.authService.loginUser(this.loginForm.value)
+    var user: any;
+    user = {
+      'email' : this.loginForm.value.email,
+      'password' : Md5.hashStr(this.loginForm.value.password)
+    }
+    this.authService.loginUser(user)
     .subscribe( 
       (res) => {
       this.statusMsg = "Login Successfull";
@@ -44,6 +50,5 @@ export class LoginComponent implements OnInit {
         this.statusMsg = "Please make sure email and password are correct";
       });
   }
-  
   
 }

@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
     "@auth0/angular-jwt": "^1.0.0-beta.9",
+    "@types/socket.io": "^1.4.31",
     "angular-font-awesome": "^3.0.3",
     "angular-io-datepicker": "^1.3.1",
     "angular-localstorage": "^1.1.5",
@@ -32,6 +33,8 @@
     "ng-pick-datetime": "^5.0.0-beta.12",
     "ng2-datepicker": "^2.1.5",
     "rxjs": "^5.4.2",
+    "socket.io": "^2.0.4",
+    "ts-md5": "^1.2.2",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

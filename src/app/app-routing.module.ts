@@ -11,6 +11,9 @@ import { ContactsComponent } from './home/contacts/contacts.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthGuard } from './auth/auth-guard.service';
+import { SettingsComponent } from './settings/settings.component';
+import { DeactivateComponent } from './settings/deactivate/deactivate.component';
+import { SettingsDashboardComponent } from './settings/settings-dashboard/settings-dashboard.component';
 
 const appRoutes: Routes = [
     {path: '', redirectTo: '/', pathMatch: 'full'},
@@ -21,7 +24,10 @@ const appRoutes: Routes = [
     {path: 'notifications', component: NotificationComponent},
     {path: 'requests', component: RequestComponent},
     {path: 'signup', component: SignUpComponent},
-    {path: 'login', component: LoginComponent}
+    {path: 'login', component: LoginComponent},
+    {path: 'settings', component: SettingsComponent, children : [
+        {path: 'deactivate', component: DeactivateComponent}
+    ]}
 ];
 
 @NgModule({

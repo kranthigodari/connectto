@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 import { FormArray } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import {Md5} from 'ts-md5/dist/md5';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -45,7 +45,16 @@ export class SignUpComponent implements OnInit {
   }
 
   onSignup() {
-    this.authService.signupUser(this.signupForm.value)
+    var user: any;
+    user = {
+      'fname' : this.signupForm.value.fname,
+      'lname' : this.signupForm.value.lname,
+      'email' : this.signupForm.value.email,
+      'mobile' : this.signupForm.value.mobile,
+      'gender' : this.signupForm.value.gender,
+      'password' : Md5.hashStr(this.signupForm.value.password),
+    }
+    this.authService.signupUser(user)
     .subscribe(
       (res) => {
         this.signupForm.reset();
