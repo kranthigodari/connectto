@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-xs-12 settings">
+            <h4 style="margin-left: 16px;">My Account</h4><br>
+            <form [formGroup]="editForm" (ngSubmit)="updateProfile()" >
+            <div class="col-md-4">
+				<div class="text-center">
+                    <img src="../assets/profile_sample.png" 
+                    alt="..." class="img-thumbnail" id="image" name="image" style="width:160px;height:160px;">
+                </div>
+                <div style="margin-top: 14px;"class="text-center">
+                    <input type="file">
+                </div>
+            </div>
+            <div class="col-md-7">
+                
+                    <div class="form-group col-md-10">
+                        <input type="text" class="form-control" placeholder="Username" id="uname" name="uname" formControlName="uname" >
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input type="text" class="form-control" 
+                        placeholder="First Name" id="fname" name="fname" formControlName="fname">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input type="text" class="form-control" placeholder="Last Name" id="lname" name="lname"
+                        formControlName="lname" >
+                    </div>
+                          
+                    <div class="form-group col-md-10">
+                        <input type="email" class="form-control" placeholder="Email" id="email" name="email" formControlName="email" >
+                    </div>
+                            
+                    <div class="form-group col-md-10">
+                        <input type="number" class="form-control" placeholder="Mobile" id="mobile" name="mobile"
+                        minlength="10" maxlength="10"formControlName="mobile" >
+                    </div> 
+                      
+                    
+                              <!-- <input type="text" name="id" id="id" [value]= "data.cnt_u_id"> -->
+                    <div class="form-group col-md-4">
+                        <button class="btn btn-success" type="submit" [disabled]=!editForm.valid >Update</button>
+                    </div>
+                
+            </div>
+        </form>
+    </div>
+  </div>

@@ -16,4 +16,10 @@ export class SettingsDashboardComponent implements OnInit {
   Deactivate() {
     this.router.navigate(['deactivate'], {relativeTo: this.route})
   }
-}
+  accountView() {
+    this.router.navigate(['account-view'], {relativeTo: this.route});
+  }
+  editAccount() {
+    this.router.navigate(['edit-profile'], {relativeTo: this.route});
+  }
+} 

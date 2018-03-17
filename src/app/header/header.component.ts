@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 import { FindFriendsService } from '../services/findfriends.service';
+import { ViewUserComponent } from '../user/view-user/view-user.component';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService,
      private route: ActivatedRoute,
       private router: Router,
-    private findFriendsService: FindFriendsService) { }
+    private findFriendsService: FindFriendsService,
+  private viewprofileComponent: ViewUserComponent) { }
 
   ngOnInit() {
     this.findFriends();
@@ -40,9 +42,22 @@ export class HeaderComponent implements OnInit {
       (res) => {
         this.friends = res;
         // debugger;
-        console.log(this.friends);
       },
       (err) => console.log(err)
     )
+  }
+
+  viewUser(id) {
+    var user: any;
+    user = {
+      'id' : id
+    }
+    this.findFriendsService.viewFriend(user)
+    .subscribe(
+      (res) => {
+      this.router.navigate(['viewProfile'], {relativeTo: this.route});
+      this.viewprofileComponent.viewProfile();
+      }
+    );
   }
 }

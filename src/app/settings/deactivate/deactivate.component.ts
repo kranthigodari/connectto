@@ -12,8 +12,8 @@ import { Http, RequestOptions, Headers } from '@angular/http';
 export class DeactivateComponent implements OnInit {
 
   deactivateForm: FormGroup;
-  token ='Bearer'+ ' '+ sessionStorage.getItem('token');
-  deactivateMsg: string;
+  token ='Bearer'+ ' '+ localStorage.getItem('token');
+  deactivateMsg: any;
   constructor(private http: Http, private route: ActivatedRoute, private router: Router) { }
   
   ngOnInit() {
@@ -45,10 +45,11 @@ export class DeactivateComponent implements OnInit {
     this.http.post('http://localhost:3000/deactivate/user', user, options )
     .subscribe(
         res => {
-          this.deactivateMsg = "";
+          this.deactivateMsg = "Your account hase been deactivated";
           this.router.navigate(['login']);
-          sessionStorage.removeItem('token');
-          sessionStorage.removeItem('username');
+          localStorage.removeItem('token');
+          localStorage.removeItem('username');
+          localStorage.removeItem('user');  
         },
         err =>  this.logError(err)
     )

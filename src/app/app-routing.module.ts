@@ -14,6 +14,13 @@ import { AuthGuard } from './auth/auth-guard.service';
 import { SettingsComponent } from './settings/settings.component';
 import { DeactivateComponent } from './settings/deactivate/deactivate.component';
 import { SettingsDashboardComponent } from './settings/settings-dashboard/settings-dashboard.component';
+import { MyaccountComponent } from './settings/myaccount/myaccount.component';
+import { EditAccountComponent } from './settings/edit-account/edit-account.component';
+import { ViewUserComponent } from './user/view-user/view-user.component';
+import { TimelineComponent } from './user/timeline/timeline.component';
+import { AboutComponent } from './user/about/about.component';
+import { PhotosComponent } from './user/photos/photos.component';
+import { FriendsComponent } from './user/friends/friends.component';
 
 const appRoutes: Routes = [
     {path: '', redirectTo: '/', pathMatch: 'full'},
@@ -26,7 +33,15 @@ const appRoutes: Routes = [
     {path: 'signup', component: SignUpComponent},
     {path: 'login', component: LoginComponent},
     {path: 'settings', component: SettingsComponent, children : [
-        {path: 'deactivate', component: DeactivateComponent}
+        {path: 'deactivate', component: DeactivateComponent},
+        {path: 'account-view', component: MyaccountComponent},
+        {path: 'edit-profile', component: EditAccountComponent}
+    ]},
+    {path: 'viewProfile', component: ViewUserComponent, children: [
+        {path: 'timeline', component: TimelineComponent},
+        {path: 'about', component: AboutComponent},
+        {path: 'photos', component: PhotosComponent},
+        {path: 'friends', component: FriendsComponent}
     ]}
 ];
 

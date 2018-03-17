@@ -12,7 +12,14 @@
         <li class="dropdown"appDropdown>
             <a style="cursor: pointer;" class="dropdown-toggle" role="button">Find Friends</a>
             <ul class="dropdown-menu">
-              <li><a style="cursor: pointer;" *ngFor="let friends of friend;">{{friend.cnt_u_id}}</a></li>
+              <li>  <a style="cursor: pointer;" *ngFor="let friend of friends;" (click)="viewUser(friend.cnt_u_id)"> <input type="hidden" value ={{friend.cnt_u_id}}>{{friend.cnt_username}}</a>
+                <div>
+
+                </div>
+                <div class="find-friends-viewall">
+                  <a href="">View All</a>
+                </div>
+              </li>
             </ul> 
         </li>
        <li><a routerLink="/" href=""> Home</a></li>

@@ -24,6 +24,13 @@ import { SettingsComponent } from './settings/settings.component';
 import { SettingsDashboardComponent } from './settings/settings-dashboard/settings-dashboard.component';
 import { DeactivateComponent } from './settings/deactivate/deactivate.component';
 import { FindFriendsService } from './services/findfriends.service';
+import { MyaccountComponent } from './settings/myaccount/myaccount.component';
+import { EditAccountComponent } from './settings/edit-account/edit-account.component';
+import { ViewUserComponent } from './user/view-user/view-user.component';
+import { TimelineComponent } from './user/timeline/timeline.component';
+import { AboutComponent } from './user/about/about.component';
+import { FriendsComponent } from './user/friends/friends.component';
+import { PhotosComponent } from './user/photos/photos.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +49,14 @@ import { FindFriendsService } from './services/findfriends.service';
     AuthHeaderComponent,
     SettingsComponent,
     SettingsDashboardComponent,
-    DeactivateComponent
+    DeactivateComponent,
+    MyaccountComponent,
+    EditAccountComponent,
+    ViewUserComponent,
+    TimelineComponent,
+    AboutComponent,
+    FriendsComponent,
+    PhotosComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +66,7 @@ import { FindFriendsService } from './services/findfriends.service';
     FormsModule,
     HttpClientModule 
   ],
-  providers: [AuthService, AuthGuard, FindFriendsService],
+  providers: [AuthService, AuthGuard, FindFriendsService, ViewUserComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -55,7 +55,7 @@ export class SignUpComponent implements OnInit {
       'password' : Md5.hashStr(this.signupForm.value.password),
     }
     this.authService.signupUser(user)
-    .subscribe(
+    .subscribe(	
       (res) => {
         this.signupForm.reset();
         this.router.navigate(['login']);
